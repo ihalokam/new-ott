@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+:root {
+  --page-background: #f4f8fc;
+  --foreground: #0f172a;
+  --muted: #64748b;
+}
+
+@theme inline {
+  --color-background: var(--page-background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Avenir Next", "SF Pro Text", "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", "Menlo", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background:
+    radial-gradient(circle at top, rgba(224, 242, 254, 0.95), transparent 34%),
+    linear-gradient(180deg, #f8fbff 0%, #f4f8fc 42%, #eef4fa 100%);
+}
+
+body {
+  min-height: 100vh;
+  background: transparent;
+  color: var(--foreground);
+  font-family: "Avenir Next", "SF Pro Text", "Segoe UI", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.22);
+}
+
+.display-font {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+}
