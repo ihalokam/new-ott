@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
@@ -21,11 +22,29 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const themeBootstrap = `
+    (function () {
+      try {
+        var storedTheme = localStorage.getItem("latest-ott-theme") || "white";
+        document.documentElement.dataset.theme = storedTheme;
+      } catch (error) {
+        document.documentElement.dataset.theme = "white";
+      }
+    })();
+  `;
+
   return (
-    <html lang="en" className="h-full scroll-smooth antialiased">
-      <body className="min-h-full bg-[var(--page-background)] text-slate-900">
+    <html
+      lang="en"
+      className="h-full scroll-smooth antialiased"
+      suppressHydrationWarning
+    >
+      <body className="min-h-full bg-[var(--page-background)] theme-text">
+        <Script id="theme-bootstrap" strategy="beforeInteractive">
+          {themeBootstrap}
+        </Script>
         <div className="relative min-h-screen overflow-x-hidden">
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-[32rem] bg-[radial-gradient(circle_at_top,rgba(125,211,252,0.22),transparent_48%),radial-gradient(circle_at_20%_20%,rgba(96,165,250,0.16),transparent_38%)]" />
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-[36rem] bg-[radial-gradient(circle_at_top,color-mix(in_srgb,var(--accent)_20%,transparent),transparent_44%),radial-gradient(circle_at_20%_20%,color-mix(in_srgb,var(--surface-elevated)_72%,transparent),transparent_36%)]" />
           <div className="relative flex min-h-screen flex-col">
             <Navbar />
             <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6 lg:px-8 lg:py-10">

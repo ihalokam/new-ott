@@ -16,17 +16,17 @@ export function SectionHeading({
   return (
     <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
       <div className="space-y-2">
-        <h2 className="text-2xl font-semibold tracking-tight text-slate-950">
+        <h2 className="theme-text text-2xl font-semibold tracking-tight">
           {title}
         </h2>
-        <p className="max-w-2xl text-sm leading-7 text-slate-600">
+        <p className="theme-text-muted max-w-2xl text-sm leading-7">
           {description}
         </p>
       </div>
       {href ? (
         <Link
           href={href}
-          className="inline-flex rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-800 shadow-[0_10px_24px_rgba(15,23,42,0.06)]"
+          className="neo-button inline-flex rounded-full px-4 py-2 text-sm font-semibold"
         >
           {ctaLabel}
         </Link>

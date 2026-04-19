@@ -63,15 +63,15 @@ export default async function HomePage() {
             <Link
               key={category.slug}
               href={`/${category.slug}`}
-              className="rounded-[1.75rem] border border-white/70 bg-white/88 p-6 shadow-[0_18px_50px_rgba(15,23,42,0.06)] transition hover:-translate-y-1"
+              className="neo-surface rounded-[1.75rem] p-6 transition hover:-translate-y-1"
             >
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-600">
+              <p className="theme-accent text-sm font-semibold uppercase tracking-[0.22em]">
                 {category.label}
               </p>
-              <h2 className="mt-4 text-2xl font-semibold text-slate-950">
+              <h2 className="theme-text mt-4 text-2xl font-semibold">
                 {category.heading}
               </h2>
-              <p className="mt-3 text-sm leading-7 text-slate-600">
+              <p className="theme-text-muted mt-3 text-sm leading-7">
                 {category.description}
               </p>
             </Link>
@@ -81,10 +81,10 @@ export default async function HomePage() {
         <section className="space-y-4">
           <div className="flex items-center justify-between gap-4">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-sky-600">
+              <p className="theme-accent text-sm font-semibold uppercase tracking-[0.22em]">
                 Language pages
               </p>
-              <h2 className="mt-2 text-3xl font-semibold text-slate-950">
+              <h2 className="theme-text mt-2 text-3xl font-semibold">
                 Browse movies by language
               </h2>
             </div>
@@ -94,7 +94,7 @@ export default async function HomePage() {
               <Link
                 key={language.slug}
                 href={`/latest-ott/${language.slug}`}
-                className="rounded-full bg-white px-5 py-3 text-sm font-semibold text-slate-800 shadow-[0_10px_30px_rgba(15,23,42,0.06)]"
+                className="neo-button rounded-full px-5 py-3 text-sm font-semibold"
               >
                 {language.label} movies
               </Link>
